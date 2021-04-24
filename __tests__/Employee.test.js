@@ -49,16 +49,3 @@ test('will constructor function return employee email', () => {
     expect(testEmp.getEmail()).toBe(email);
 });
 
-test('employee constructor set employee role', () => {
-    const role = '8888';
-    const testEmp = new Employee('foo', 'Foo', 'Foo', role);
-
-    expect(testEmp.role).toBe(role);
-});
-
-test('will constructor function return employee role', () => {
-    const role = '8888';
-    const testEmp = new Employee('foo', 'Foo', 'Foo', role);
-
-    expect(testEmp.getRole()).toBe(role);
-});
