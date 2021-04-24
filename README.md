@@ -18,7 +18,7 @@
 
   
   ## Installation
-  Clone the repository to your local machine, then in stall node.js in the root folder (in you don't have it globally installed), you will then need to install the Inquirer NPM   package. Run the command `npm install inquirer`to install. 
+  Clone the repository to your local machine, then in stall node.js in the root folder (in you don't have it globally installed), you will then need to install the Inquirer NPM   package. Run the command `npm install inquirer` to install. 
 
   ## Usage
   To use the application simply run `node index` in your command line and follow the prompts. The Finished product will save to the ./dist file.
