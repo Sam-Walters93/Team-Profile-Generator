@@ -30,7 +30,7 @@
   The testing package used in this project was Jest NPM. Install in your root folder with the `npm install --save-dev jest` command.
 
   ## License
-  This project was done under the MIT license to know more about it, please click here: [MIT](https://choosealicense.com/licenses/mit/)
+  This project was done under the MIT license. To know more about it, please click here: [MIT](https://choosealicense.com/licenses/mit/)
 
   ## Questions
   Please visit my GitHub page: https://github.com/sam-walters93
