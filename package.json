@@ -4,7 +4,7 @@
   "description": "Employee Info Generator",
   "main": "app.js",
   "scripts": {
-    "test": "node app"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
