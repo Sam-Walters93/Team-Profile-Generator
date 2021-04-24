@@ -93,6 +93,11 @@ function createFile() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+        crossorigin="anonymous"/>
         <script type="text/javascript" src="yourfile.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title>Team Profile</title>
@@ -118,7 +123,7 @@ function generateCard(member) {
 
     return new Promise(function(resolve, reject) {
         const name = member.name;
-        const role = member.getRole()
+        const role = member.role;
         const id = member.id;
         const email = member.email;
         let empHtml;
@@ -129,7 +134,7 @@ function generateCard(member) {
                 empHtml = 
                 `<div class="col-6">
                 <div class="card mx-auto mb-3" style="width: 18rem">
-                <h5 class="card-header">${name}<br /><br />Engineer</h5>
+                <h5 class="card-header">${name}<br /><br />Engineer    <i class="fas fa-mouse"></i></h5>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${id}</li>
                     <li class="list-group-item">E-mail: <span id="email">${email}</span></li>
@@ -143,7 +148,7 @@ function generateCard(member) {
                 empHtml = 
                 `<div class="col-6">
                 <div class="card mx-auto mb-3" style="width: 18rem">
-                <h5 class="card-header">${name}<br /><br />Intern</h5>
+                <h5 class="card-header">${name}<br /><br />Intern   <i class="fas fa-graduation-cap"></i> </h5> 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${id}</li>
                     <li class="list-group-item">E-mail: <span id="email">${email}</span></li>
@@ -157,7 +162,8 @@ function generateCard(member) {
                  empHtml = 
                 `<div class="col-6">
                 <div class="card mx-auto mb-3" style="width: 18rem">
-                <h5 class="card-header">${name}<br /><br />Manager</h5>
+                
+                <h5 class="card-header">${name}<br /><br />Manager   <i class="fas fa-tasks card-header"></i></h5> 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${id}</li>
                     <li class="list-group-item">Email: <span id="email">${email}</span></li>
