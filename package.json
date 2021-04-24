@@ -1,0 +1,27 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Employee Info Generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sam-Walters93/Team-Profile-Generator.git"
+  },
+  "keywords": [
+    "node",
+    "generator",
+    "CLI"
+  ],
+  "author": "Sam Walters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sam-Walters93/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/Sam-Walters93/Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
