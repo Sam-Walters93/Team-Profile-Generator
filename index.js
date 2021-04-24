@@ -68,7 +68,8 @@ function newEmployee() {
                     }
                     if (role === "Intern") {
                         newMember = new Intern(name, role, id, email, roleInfo);
-                    } else {
+                    }  
+                    if (role === "Manager") {
                         newMember = new Manager(name, role, id, email, roleInfo);
                     }
 
@@ -98,7 +99,7 @@ function createFile() {
         href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
         integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
         crossorigin="anonymous"/>
-        <script type="text/javascript" src="yourfile.js"></script>
+        <script type="text/javascript" src="./index.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title>Team Profile</title>
     </head>
@@ -119,14 +120,14 @@ function createFile() {
 
 function generateCard(member) {
 
-    console.log(member.getRole());
-
     return new Promise(function(resolve, reject) {
         const name = member.name;
         const role = member.role;
         const id = member.id;
         const email = member.email;
         let empHtml;
+
+        console.log(member.github);
 
         switch(role) {
 
@@ -137,8 +138,8 @@ function generateCard(member) {
                 <h5 class="card-header">${name}<br /><br />Engineer    <i class="fas fa-mouse"></i></h5>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${id}</li>
-                    <li class="list-group-item">E-mail: <span id="email">${email}</span></li>
-                    <li class="list-group-item" id="github">GitHub: ${member.gitHub}</li>
+                    <li class="list-group-item">E-mail: <a href='mailto: ${email}' target='_blank'>${email}</a></li>
+                    <li class="list-group-item" id="github">GitHub: <a href='https://github.com/${member.github}' target='_blank'>${member.github}</a></li>
                 </ul>
                 </div>
                 </div>`
@@ -151,7 +152,7 @@ function generateCard(member) {
                 <h5 class="card-header">${name}<br /><br />Intern   <i class="fas fa-graduation-cap"></i> </h5> 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${id}</li>
-                    <li class="list-group-item">E-mail: <span id="email">${email}</span></li>
+                    <li class="list-group-item">E-mail: <a href='mailto: ${email}' target='_blank'>${email}</a></li>
                     <li class="list-group-item">University: ${member.university}</li>
                 </ul>
                 </div>
@@ -166,7 +167,7 @@ function generateCard(member) {
                 <h5 class="card-header">${name}<br /><br />Manager   <i class="fas fa-tasks card-header"></i></h5> 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${id}</li>
-                    <li class="list-group-item">Email: <span id="email">${email}</span></li>
+                    <li class="list-group-item">E-mail: <a href='mailto: ${email}' target='_blank'>${email}</a></li>
                     <li class="list-group-item">Phone Number: ${member.officeNumber}</li>
                 </ul>
                 </div>
@@ -180,7 +181,9 @@ function generateCard(member) {
             };
             return resolve();
         });
-    })
+    }).catch(err => {
+        console.log(err);
+    });
 };
 
 function completeFile() {
