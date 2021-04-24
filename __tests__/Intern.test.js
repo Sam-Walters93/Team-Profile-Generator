@@ -3,14 +3,14 @@ const Intern = require('../lib/Intern');
 
 test('will constructor set university', () => {
     const university = 'university.com/stuffinsthebear'
-    const testInt = new Intern('foo', 'Foo', 'Foo', university)
+    const testInt = new Intern('foo', 'Foo', 'Foo', 'foo', university)
 
     expect(testInt.university).toBe(university);
 });
 
 test('will constructor function return university', () => {
     const university = 'university.com/stuffinsthebear'
-    const testInt = new Intern('foo', 'Foo', 'Foo', university)
+    const testInt = new Intern('foo', 'Foo', 'Foo', 'foo', university)
 
     expect(testInt.getSchool()).toBe(university);
 });

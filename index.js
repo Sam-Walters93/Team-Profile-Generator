@@ -31,7 +31,7 @@ function newEmployee() {
                 message: "Enter team member's e-mail",
                 name: "email"
             }])
-            .then(function({name, id, role, email}) {
+            .then(function({name, role, id, email}) {
                 let roleInfo;
                 
                 switch(role) {
@@ -64,12 +64,12 @@ function newEmployee() {
                     let newMember;
 
                     if (role === "Engineer") {
-                        newMember = new Engineer(name, id, email, roleInfo);
+                        newMember = new Engineer(name, role, id, email, roleInfo);
                     }
                     if (role === "Intern") {
-                        newMember = new Intern(name, id, email, roleInfo);
+                        newMember = new Intern(name, role, id, email, roleInfo);
                     } else {
-                        newMember = new Manager(name, id, email, roleInfo);
+                        newMember = new Manager(name, role, id, email, roleInfo);
                     }
 
                     employees.push(newMember);
@@ -114,12 +114,13 @@ function createFile() {
 
 function generateCard(member) {
 
-    console.log(member)
+    console.log(member.getRole());
+
     return new Promise(function(resolve, reject) {
         const name = member.name;
+        const role = member.getRole()
         const id = member.id;
         const email = member.email;
-        const role = member.getRole();
         let empHtml;
 
         switch(role) {
