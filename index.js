@@ -7,7 +7,8 @@ const Manager = require('./lib/Manager');
 const employees = [];
 
 
-function newEmployee() {
+
+newEmployee = () => {
     inquirer.prompt([
         {
             message: "Enter team member's name",
@@ -32,7 +33,7 @@ function newEmployee() {
             name: "email"
         }
     ])
-    .then(function({name, role, id, email}) {
+    .then(({name, role, id, email}) => {
         let roleInfo;
             
         switch(role) {
@@ -62,7 +63,7 @@ function newEmployee() {
                 name: "moreMembers"
             }
         ])
-        .then(function({roleInfo, moreMembers}) {
+        .then(({roleInfo, moreMembers}) => {
             let newMember;
 
             if (role === "Engineer") {
@@ -78,7 +79,7 @@ function newEmployee() {
             employees.push(newMember);
             generateCard(newMember)
 
-            .then(function() {
+            .then(() => {
                 if (moreMembers === "Yes") {
                     newEmployee();
                 } else (
@@ -89,7 +90,7 @@ function newEmployee() {
     })
 };
 
-function createFile() {
+createFile = () => {
     const html = `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -107,7 +108,7 @@ function createFile() {
         <div class="container">
             <div class="row">`;
 
-    fs.writeFile("./dist/team.html", html, function(err) {
+    fs.writeFile("./dist/team.html", html, (err) => {
         if (err) {
             console.log(err);
         }
@@ -115,9 +116,9 @@ function createFile() {
     console.log("file created");
 };
 
-function generateCard(member) {
+generateCard = (member) => {
 
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
         const name = member.name;
         const role = member.role;
         const id = member.id;
@@ -161,18 +162,18 @@ function generateCard(member) {
                 `<div class="col-6">
                 <div class="card mx-auto mb-3" style="width: 18rem">
                 
-                <h5 class="card-header">${name}<br /><br />Manager   <i class="fas fa-tasks card-header"></i></h5> 
+                <h5 class="card-header">${name}<br /><br />Manager   <i class="fas fa-address-card"></i></h5> 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${id}</li>
                     <li class="list-group-item">E-mail: <a href='mailto: ${email}' target='_blank'>${email}</a></li>
-                    <li class="list-group-item">Phone Number: ${member.officeNumber}</li>
+                    <li class="list-group-item">Phone Number: <a href='tel: ${member.officeNumber}' target='_blank'>${member.officeNumber}</a></li>
                 </ul>
                 </div>
                 </div>`
             break;
         };
        
-        fs.appendFile("./dist/team.html", empHtml, function(err) {
+        fs.appendFile("./dist/team.html", empHtml, (err) => {
             if (err) {
                 return err;
             };
@@ -184,14 +185,14 @@ function generateCard(member) {
     });
 };
 
-function completeFile() {
+completeFile = () => {
     const html = ` </div>
     </div>
     
 </body>
 </html>`;
 
-    fs.appendFile("./dist/team.html", html, function (err) {
+    fs.appendFile("./dist/team.html", html, (err) => {
         if (err) {
             console.log(err);
         };
