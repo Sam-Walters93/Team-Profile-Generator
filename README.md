@@ -13,7 +13,7 @@
 
   ## Video
 
-  [![Walkthrough Video](./assets/tpg.jpg)](https://drive.google.com/file/d/1sSkgdEcti0c-UHjmGchhq_UYAUooKneY/view)
+  [![Walkthrough Video](assets/tpg.JPG)](https://drive.google.com/file/d/1sSkgdEcti0c-UHjmGchhq_UYAUooKneY/view)
  
 
   
