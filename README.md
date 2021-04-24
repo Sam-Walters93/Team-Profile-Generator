@@ -1,3 +1,3 @@
 # Team-Profile-Generator
 
-https://img.shields.io/github/languages/top/sam-walters93/Team-Profile-Generator
+ ![MIT](https://img.shields.io/badge/License-MIT-blue)
