@@ -15,7 +15,7 @@ test('will constructor function return github', () => {
     expect(testEng.getGithub()).toBe(github);
 });
 
-test('will constructor function return github', () => {
+test('will constructor function return role', () => {
     const testEng = new Engineer;
 
     expect(testEng.getRole()).toBe('Engineer');
