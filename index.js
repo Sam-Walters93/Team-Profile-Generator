@@ -6,8 +6,6 @@ const Manager = require('./lib/Manager');
 
 const employees = [];
 
-
-
 newEmployee = () => {
     inquirer.prompt([
         {
@@ -113,7 +111,6 @@ createFile = () => {
             console.log(err);
         }
     });
-    console.log("file created");
 };
 
 generateCard = (member) => {
@@ -124,8 +121,6 @@ generateCard = (member) => {
         const id = member.id;
         const email = member.email;
         let empHtml;
-
-        console.log(member.github);
 
         switch(role) {
 
@@ -186,19 +181,27 @@ generateCard = (member) => {
 };
 
 completeFile = () => {
-    const html = ` </div>
-    </div>
-    
-</body>
-</html>`;
+    const html = ' </div>\n</div>\n</body> \n</html>';
 
     fs.appendFile("./dist/team.html", html, (err) => {
         if (err) {
             console.log(err);
         };
     });
-    console.log("process complete");
+    console.log(`
+    ======================================================
+    ===== Thank You for using Team Profile Generator =====
+    ======================================================
+    `);
 }
 
-createFile();
-newEmployee();
+initApp = () => {
+    console.log(`
+    ========= Welcome to Team Profile Generator ==========
+    `);
+
+    createFile();
+    newEmployee();
+}
+
+initApp();
